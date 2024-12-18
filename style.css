@@ -1,50 +1,90 @@
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #f5f5f5;
-  }
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  color: #fff;
+}
+
+.calculator {
+  width: 320px;
+  background-color: #333;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+#display {
+  width: 100%;
+  height: 50px;
+  background-color: #111;
+  color: #0f0;
+  font-size: 24px;
+  padding: 10px;
+  margin-bottom: 15px;
+  text-align: right;
+  border: 2px solid #555;
+  border-radius: 8px;
+  outline: none;
+  box-shadow: inset 0 0 10px rgba(0, 255, 0, 0.2);
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+button {
+  height: 60px;
+  font-size: 20px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  background: linear-gradient(145deg, #444, #555);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3), inset 0 -2px 4px rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+button:hover {
+  background: linear-gradient(145deg, #555, #666);
+  transform: translateY(-3px);
+}
+
+button:active {
+  transform: translateY(1px);
+  background: linear-gradient(145deg, #333, #444);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), inset 0 -2px 4px rgba(0, 0, 0, 0.5);
+}
+
+button:nth-child(4),
+button:nth-child(8),
+button:nth-child(12),
+button:nth-child(16) {
+  background: #ff5722;
+}
+
+button:nth-child(4):hover,
+button:nth-child(8):hover,
+button:nth-child(12):hover,
+button:nth-child(16):hover {
+  background: #e64a19;
+}
+
+@media (max-width: 400px) {
   .calculator {
-    width: 300px;
-    background-color: #333;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+      width: 90%;
+      padding: 15px;
   }
-  
-  #display {
-    width: 100%;
-    height: 40px;
-    background-color: #222;
-    color: #fff;
-    font-size: 20px;
-    padding: 10px;
-    margin-bottom: 10px;
-    text-align: right;
-    border: none;
-    border-radius: 5px;
-  }
-  
-  .buttons {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-  }
-  
+
   button {
-    width: 100%;
-    height: 50px;
-    font-size: 20px;
-    border: none;
-    border-radius: 5px;
-    color: white;
-    background-color: #555;
-    cursor: pointer;
+      height: 50px;
+      font-size: 18px;
   }
-  
-  button:hover {
-    background-color: #777;
-  }
+}
